@@ -25,7 +25,7 @@ namespace Cosmosfiles
 
         protected override void Run()
         {
-            string s = "﻿12.00\r\n13.90\r\n14.10";
+            string s = "move,1,200\r\nstore,1\r\nprint\r\nmove,2,300\r\nload,0,2\r\nprint";
             var fs_type = fs.GetFileSystemType(@"0:\");
             Console.WriteLine("File System Type: " + fs_type);
             var directory_list = Directory.GetFiles(@"0:\");
