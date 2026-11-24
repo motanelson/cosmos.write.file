@@ -25,15 +25,15 @@ namespace Cosmosfiles
 
         protected override void Run()
         {
-            string s = "﻿\x01main/main\x02main\x01main/system\x02system\x01main/x\x02xxx\x01system/main\x02mene\x01system/system\x02main\x01main/char\x02#####\x01";
+            string s = "﻿12.00\r\n13.90\r\n14.10";
             var fs_type = fs.GetFileSystemType(@"0:\");
             Console.WriteLine("File System Type: " + fs_type);
             var directory_list = Directory.GetFiles(@"0:\");
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
-            File.WriteAllText(@"0:\\my.dat",s);
-            s = File.ReadAllText(@"0:\\my.dat");
+            File.WriteAllText(@"0:\\my.txt",s);
+            s = File.ReadAllText(@"0:\\my.txt");
             Console.WriteLine(s);
             s = Console.ReadLine();
 
