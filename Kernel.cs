@@ -25,7 +25,7 @@ namespace Cosmosfiles
 
         protected override void Run()
         {
-            string s = "﻿\u0001main/main\u0002main\u0001main/system\u0002system\u0001main/x\u0002xxx\u0001system/main\u0002mene\u0001system/system\u0002main\u0001main/char\u0002#####\u0001";
+            string s = "﻿\x01main/main\x02main\x01main/system\x02system\x01main/x\x02xxx\x01system/main\x02mene\x01system/system\x02main\x01main/char\x02#####\x01";
             var fs_type = fs.GetFileSystemType(@"0:\");
             Console.WriteLine("File System Type: " + fs_type);
             var directory_list = Directory.GetFiles(@"0:\");
