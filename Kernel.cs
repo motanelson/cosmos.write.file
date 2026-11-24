@@ -25,15 +25,15 @@ namespace Cosmosfiles
 
         protected override void Run()
         {
-            string s = "﻿loads=load\r\nmain=menus\r\n[system]\r\ninit=loads\r\nmem=48k";
+            string s = "﻿\u0001main/main\u0002main\u0001main/system\u0002system\u0001main/x\u0002xxx\u0001system/main\u0002mene\u0001system/system\u0002main\u0001main/char\u0002#####\u0001";
             var fs_type = fs.GetFileSystemType(@"0:\");
             Console.WriteLine("File System Type: " + fs_type);
             var directory_list = Directory.GetFiles(@"0:\");
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
-            File.WriteAllText(@"0:\\my.ini",s);
-            s = File.ReadAllText(@"0:\\my.ini");
+            File.WriteAllText(@"0:\\my.dat",s);
+            s = File.ReadAllText(@"0:\\my.dat");
             Console.WriteLine(s);
             s = Console.ReadLine();
 
