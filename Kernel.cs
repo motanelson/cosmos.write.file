@@ -25,15 +25,20 @@ namespace Cosmosfiles
 
         protected override void Run()
         {
-            string s = "; --- Hello World & Math in JASM ---\r\n.class public HelloWorld\r\n.super java/lang/Object\r\n\r\n.method public static main : ()V\r\n   .limit stack 4\r\n   .limit locals 2\r\n\r\n   getstatic java/lang/System/out Ljava/io/PrintStream;\r\n   ldc \"Hello from Java Virtual Machine!\"\r\n   invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V\r\n\r\n   ; Compute (15 * 3) + 7\r\n   bipush 15\r\n   iconst_3\r\n   imul\r\n   bipush 7\r\n   iadd\r\n   istore_1\r\n\r\n   getstatic java/lang/System/out Ljava/io/PrintStream;\r\n   ldc \"Calculation Result (15 * 3 + 7):\"\r\n   invokevirtual java/io/PrintStream/println(Ljava/lang/String;)V\r\n\r\n   getstatic java/lang/System/out Ljava/io/PrintStream;\r\n   iload_1\r\n   invokevirtual java/io/PrintStream/println(I)V\r\n\r\n   return\r\n.end method";
+            string s = "";
+            s = "x86,8086\r\n" +
+               "x86,80186\r\n" +
+               "x86,80286\r\n" +
+               "x86,80386\r\n" +
+               "x86,80486\r\n";
             var fs_type = fs.GetFileSystemType(@"0:\");
             Console.WriteLine("File System Type: " + fs_type);
             var directory_list = Directory.GetFiles(@"0:\");
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
-            File.WriteAllText(@"0:\\my.asm",s);
-            s = File.ReadAllText(@"0:\\my.asm");
+            File.WriteAllText(@"0:\\my.csv",s);
+            s = File.ReadAllText(@"0:\\my.csv");
             Console.WriteLine(s);
             s = Console.ReadLine();
 
